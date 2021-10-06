@@ -11,8 +11,6 @@ export const App = () => {
   const [name,setName] = useState ("");
   const [responseData,setResponseData] = useState ({});
 
-
-  const baseURL = "http://localhost:9000/task/add"
   function setData(data){
     setList(data)
   }
@@ -26,10 +24,7 @@ export const App = () => {
       .then((response) => {
         setResponseData(response)
       });
-  
   }
-
-
   const  addTask = (e) =>{
       e.preventDefault();
       const todo ={
