@@ -1,5 +1,49 @@
-I, [2021-10-07T23:06:55.753492 #2020]  INFO -- : Registered expected interaction POST /task/add
-D, [2021-10-07T23:06:55.753492 #2020] DEBUG -- : {
+I, [2021-10-08T00:05:41.305622 #16920]  INFO -- : Registered expected interaction GET /task/getall
+D, [2021-10-08T00:05:41.305622 #16920] DEBUG -- : {
+  "description": "a get request for todo list",
+  "providerState": "there are todo list",
+  "request": {
+    "method": "GET",
+    "path": "/task/getall"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+    },
+    "body": {
+      "todo-list": [
+        {
+          "id": "13112",
+          "name": "deneme1"
+        },
+        {
+          "id": "263556",
+          "name": "deneme2"
+        },
+        {
+          "id": "6543",
+          "name": "deneme3"
+        }
+      ]
+    }
+  },
+  "metadata": null
+}
+I, [2021-10-08T00:05:41.321622 #16920]  INFO -- : Received request GET /task/getall
+I, [2021-10-08T00:05:41.322621 #16920]  INFO -- : Registered expected interaction POST /task/add
+D, [2021-10-08T00:05:41.322621 #16920] DEBUG -- : {
+  "path": "/task/getall",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json, text/plain, */*",
+    "User-Agent": "axios/0.22.0",
+    "Host": "localhost:3001",
+    "Connection": "close",
+    "Version": "HTTP/1.1"
+  }
+}
+D, [2021-10-08T00:05:41.322621 #16920] DEBUG -- : {
   "description": "a post request for todo",
   "providerState": "there are todo",
   "request": {
@@ -12,21 +56,46 @@ D, [2021-10-07T23:06:55.753492 #2020] DEBUG -- : {
   "response": {
     "status": 201,
     "headers": {
+    },
+    "body": {
+      "success": true
     }
   },
   "metadata": null
 }
-I, [2021-10-07T23:06:55.769493 #2020]  INFO -- : Received request POST /
-D, [2021-10-07T23:06:55.770492 #2020] DEBUG -- : {
-  "path": "/",
+I, [2021-10-08T00:05:41.322621 #16920]  INFO -- : Found matching response for GET /task/getall
+D, [2021-10-08T00:05:41.323621 #16920] DEBUG -- : {
+  "status": 200,
+  "headers": {
+  },
+  "body": {
+    "todo-list": [
+      {
+        "id": "13112",
+        "name": "deneme1"
+      },
+      {
+        "id": "263556",
+        "name": "deneme2"
+      },
+      {
+        "id": "6543",
+        "name": "deneme3"
+      }
+    ]
+  }
+}
+I, [2021-10-08T00:05:41.337542 #16920]  INFO -- : Received request POST /task/add
+I, [2021-10-08T00:05:41.338541 #16920]  INFO -- : Writing pact for todo-list-backend to C:/Users/Gulyuva/ReactDemo/react-demo/pacts/todo-list-front-todo-list-backend.json
+D, [2021-10-08T00:05:41.338541 #16920] DEBUG -- : {
+  "path": "/task/add",
   "query": "",
   "method": "post",
   "body": {
-    "name": "Buy some milk",
-    "IsDone": false
+    "Name": "Buy some milk"
   },
   "headers": {
-    "Content-Length": "39",
+    "Content-Length": "24",
     "Content-Type": "application/json",
     "Accept": "application/json, text/plain, */*",
     "User-Agent": "axios/0.22.0",
@@ -35,6 +104,12 @@ D, [2021-10-07T23:06:55.770492 #2020] DEBUG -- : {
     "Version": "HTTP/1.1"
   }
 }
-E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : No matching interaction found for POST /
-E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : Interaction diffs for that route:
-E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : 
+I, [2021-10-08T00:05:41.339544 #16920]  INFO -- : Found matching response for POST /task/add
+D, [2021-10-08T00:05:41.340542 #16920] DEBUG -- : {
+  "status": 201,
+  "headers": {
+  },
+  "body": {
+    "success": true
+  }
+}

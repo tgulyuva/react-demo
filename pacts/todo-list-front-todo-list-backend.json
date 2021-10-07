@@ -1,0 +1,34 @@
+{
+  "consumer": {
+    "name": "todo-list-front"
+  },
+  "provider": {
+    "name": "todo-list-backend"
+  },
+  "interactions": [
+    {
+      "description": "a post request for task",
+      "providerState": "there is task",
+      "request": {
+        "method": "POST",
+        "path": "/task/add",
+        "body": {
+          "Name": "Buy some milk"
+        }
+      },
+      "response": {
+        "status": 201,
+        "headers": {
+        },
+        "body": {
+          "success": true
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}

@@ -1,17 +1,17 @@
 const assert = require('assert')
 const { Pact } = require('@pact-foundation/pact')
 const axios = require("axios");
-postTask = async (task, apiBaseUrl) => {
-  axios
-      .post(apiBaseUrl, {
-        name: task,
-        IsDone: false
-      })
-      .then((response) => {
-        setResponseData(response)
-      });
-} 
+// postTask = async (task, apiBaseUrl) => {
+//   console.log("************** çalıştım *****************")
+//  return axios
+//       .post(apiBaseUrl +"/task/add", {
+//         name: task,
+//         IsDone: false
+//       });
+// } 
+const postTodo = (content, apiBaseUrl) => axios.post(apiBaseUrl + "/task/add", { Name: content })
 
+const fetchTodolist = (apiBaseUrl) => axios.get(apiBaseUrl + "/task/getall")
 describe('Pact with todo API', () => {
     const provider = new Pact({
       port: 3001,
@@ -36,15 +36,16 @@ describe('Pact with todo API', () => {
             }
           },
           willRespondWith: {
+            body:{
+              "success":true
+            },
             status: 201,
           },
         })
       })
   
       it("'Buy the milk' to be added to to-do list", async () => {
-        postTask('Buy some milk', "http://localhost:3001").then((response) => {
-            console.log('*************')
-            console.log(response)
+        postTodo('Buy some milk', "http://localhost:3001").then((response) => {
           assert.ok(response.status)
         }).catch((error) => {
           console.log(error.message);
@@ -52,4 +53,3 @@ describe('Pact with todo API', () => {
       })
     })
   })
-  
