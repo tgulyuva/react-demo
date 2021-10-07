@@ -1,7 +1,24 @@
-I, [2021-10-06T22:35:42.587492 #16928]  INFO -- : Verifying - interactions matched
-I, [2021-10-06T22:35:42.589493 #16928]  INFO -- : Received request POST /task
-D, [2021-10-06T22:35:42.590493 #16928] DEBUG -- : {
-  "path": "/task",
+I, [2021-10-07T23:06:55.753492 #2020]  INFO -- : Registered expected interaction POST /task/add
+D, [2021-10-07T23:06:55.753492 #2020] DEBUG -- : {
+  "description": "a post request for todo",
+  "providerState": "there are todo",
+  "request": {
+    "method": "POST",
+    "path": "/task/add",
+    "body": {
+      "Name": "Buy some milk"
+    }
+  },
+  "response": {
+    "status": 201,
+    "headers": {
+    }
+  },
+  "metadata": null
+}
+I, [2021-10-07T23:06:55.769493 #2020]  INFO -- : Received request POST /
+D, [2021-10-07T23:06:55.770492 #2020] DEBUG -- : {
+  "path": "/",
   "query": "",
   "method": "post",
   "body": {
@@ -12,17 +29,12 @@ D, [2021-10-06T22:35:42.590493 #16928] DEBUG -- : {
     "Content-Length": "39",
     "Content-Type": "application/json",
     "Accept": "application/json, text/plain, */*",
-    "Referer": "http://localhost/",
-    "User-Agent": "Mozilla/5.0 (win32) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/16.7.0",
-    "Accept-Language": "en",
-    "Origin": "http://localhost",
-    "Accept-Encoding": "gzip, deflate",
-    "Host": "localhost:4000",
-    "Connection": "keep-alive",
+    "User-Agent": "axios/0.22.0",
+    "Host": "localhost:3001",
+    "Connection": "close",
     "Version": "HTTP/1.1"
   }
 }
-E, [2021-10-06T22:35:42.590493 #16928] ERROR -- : No matching interaction found for POST /task
-E, [2021-10-06T22:35:42.590493 #16928] ERROR -- : Interaction diffs for that route:
-E, [2021-10-06T22:35:42.590493 #16928] ERROR -- : 
-I, [2021-10-06T22:35:42.602493 #16928]  INFO -- : Cleared interactions
+E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : No matching interaction found for POST /
+E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : Interaction diffs for that route:
+E, [2021-10-07T23:06:55.770492 #2020] ERROR -- : 
